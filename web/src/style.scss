@@ -1,0 +1,99 @@
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+
+
+$appBackground: #4f8178;
+$lightContrastColor: #2e554e;
+$contrastColor: #1b3530; 
+$themeLightColor: #0d2520;
+$themeDarkColor: #001814;
+
+
+$greyText: #7e8a88;
+$lightText: white;
+$defaultText: #a7b0ae; 
+
+.formContainer{
+    background-color: $appBackground;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .formWrapper{
+        background-color: $lightContrastColor;
+        padding:30px 60px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        .logo{
+            color: $themeLightColor;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .title{
+            color: $themeLightColor;
+            font-size: 14px;
+            padding-bottom: 10px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            input{
+                padding: 15px;
+                border: none;
+                border-bottom: 1px solid $contrastColor;
+                &::placeholder{
+                    color: $greyText
+                }
+            }
+            button{
+                width: 100%;
+                background-color: $contrastColor;
+                color: $lightText;
+                padding: 10px;
+                font-weight: bold;
+                border: none;
+                cursor: pointer;
+            }
+            label{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                img{
+                    width: 24px;
+                    height: 24px;
+                }
+                span{
+                    font-size: 12px;
+                    color: $greyText
+                }
+            }
+        }
+        p{
+            padding-top: 10px;
+            font-size: 12px;
+            color: $greyText
+        }
+    }
+}
